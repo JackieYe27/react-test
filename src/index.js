@@ -6,20 +6,20 @@ const books = [
 {
   id:1,
   img:'https://images-na.ssl-images-amazon.com/images/I/81eB%2B7%2BCkUL._AC_UL200_SR200,200_.jpg',
-  title: 'Title1',
-  author: 'Author1'
+  title: 'I Love You to the Moon and Back',
+  author: 'Amelia Hepworth'
 },
 {
   id:2,
   img:'https://images-na.ssl-images-amazon.com/images/I/91dylEq7LML._AC_UL200_SR200,200_.jpg',
-  title: 'Title2',
-  author: 'Author2'
+  title: 'World Travel: An Irreverent Guide',
+  author: 'Anthony Bourdain'
 },
 {
   id:3,
   img:'https://images-na.ssl-images-amazon.com/images/I/81nzxODnaJL._AC_UL200_SR200,200_.jpg',
-  title: 'Title3',
-  author: 'Author3'
+  title: 'If Animals Kissed Good Night ',
+  author: 'Ann Whitford Paul'
 }
 ]
 
@@ -39,11 +39,17 @@ const BookList = () => {
 const Book = (props) => {
   const { img, title, author} = props.book
   console.log(props);
+
+  const clickHandler = () => {
+    console.log(title);
+  }
+
   return (
-    <article className='book'>
+    <article className='book' onMouseOver={() => {console.log(title)}}>
       <img src={img} alt=""/>
       <h1>{title}</h1>
       <h4>{author}</h4>
+      <button type="button" onClick={clickHandler}> Click Me</button>
     </article>
   )
 }
